@@ -1,0 +1,14 @@
+version: "2"
+services:
+  node:
+    build: ./provisioning/nodeserver
+    image: ${COMPOSE_PROJECT_NAME}/nodeserver:1.0
+    user: ${FIXUID}:${FIXGID}
+    environment:
+      - NODE_ENV=development
+      #- PORT=${PORT}
+    volumes:
+      - ./app:/home/node/app
+    ports:
+      - '${PORT}:${PORT}'
+    command: bash -c "npm install && npm run dev"

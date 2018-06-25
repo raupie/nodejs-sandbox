@@ -1,0 +1,7 @@
+# IDE ignore
+.DS_Store
+.idea
+
+# Project ignore
+.env
+app/node_modules/*
